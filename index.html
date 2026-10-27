@@ -81,7 +81,9 @@ h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15}
 .team{background:var(--navy-800)}
 .people{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .person{background:var(--navy-900);border:1px solid var(--line);border-radius:var(--radius);padding:40px 24px;text-align:center}
-.person img{width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 20px;border:3px solid var(--blue)}
+
+.person-avatar { width: 120px; height: 120px; border-radius: 50%; background: #1E293B; color: #60A5FA; font-size: 2.5rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 3px solid #2563EB; font-family: 'Inter', sans-serif; }
+
 .person h3{font-size:1.2rem;color:var(--white)}
 .person p{color:var(--silver);font-size:.9rem;margin-top:6px}
 
@@ -231,9 +233,9 @@ body { background: #0b1120; }
         <p>A showcase of our heavy infrastructure and civil engineering works.</p>
       </div>
       <div class="gallery">
-        <figure class="shot s1"><img loading="lazy" alt="Bridge construction" src="https://images.unsplash.com/photo-1545558014-8692077e9b5c?auto=format&fit=crop&w=1200&q=80"><figcaption><b>River Crossing Bridge</b><small>Infrastructure</small></figcaption></figure>
-        <figure class="shot s2"><img loading="lazy" alt="Highway road construction" src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=800&q=80"><figcaption><b>Federal Highway</b><small>Road Works</small></figcaption></figure>
-        <figure class="shot s2"><img loading="lazy" alt="Civil engineering site" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"><figcaption><b>Commercial Complex</b><small>General Building</small></figcaption></figure>
+        <figure class="shot s1"><img loading="lazy" alt="Bridge construction" src="https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?auto=format&fit=crop&w=1200&q=80"><figcaption><b>River Crossing Bridge</b><small>Infrastructure</small></figcaption></figure>
+        <figure class="shot s2"><img loading="lazy" alt="Highway road construction" src="https://images.unsplash.com/photo-1541888078693-01851612320f?auto=format&fit=crop&w=800&q=80"><figcaption><b>Federal Highway</b><small>Road Works</small></figcaption></figure>
+        <figure class="shot s2"><img loading="lazy" alt="Civil engineering site" src="https://images.unsplash.com/photo-1590496793929-36417d3117de?auto=format&fit=crop&w=800&q=80"><figcaption><b>Commercial Complex</b><small>General Building</small></figcaption></figure>
       </div>
     </div>
   </section>
@@ -246,17 +248,17 @@ body { background: #0b1120; }
       </div>
       <div class="people">
         <article class="person">
-          <img loading="lazy" alt="Ahmad Muhammad Garba" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80">
+          <div class="person-avatar">AM</div>
           <h3>Ahmad Muhammad Garba</h3>
           <p>Managing Director</p>
         </article>
         <article class="person">
-          <img loading="lazy" alt="Engr. Sarah O." src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80">
+          <div class="person-avatar">SO</div>
           <h3>Engr. Sarah O.</h3>
           <p>Head of Civil Engineering</p>
         </article>
         <article class="person">
-          <img loading="lazy" alt="Arc. David K." src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80">
+          <div class="person-avatar">DK</div>
           <h3>Arc. David K.</h3>
           <p>Project Director</p>
         </article>
