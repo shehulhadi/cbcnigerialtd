@@ -1,214 +1,87 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Colossal Bridge Construction Nig. Ltd</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1220">
+<title>Colossal Bridge Construction Nig. Ltd | General Construction & Consultancy</title>
 <style>
-:root{--bg:#070d1a;--bg2:#0c1426;--card:#111b31;--line:#1f2d4a;--text:#e8edf7;--muted:#92a0ba;--accent:#2f6bff;--accent2:#5b8cff;--wrap:1200px}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--wrap);margin:0 auto;padding:0 32px}
-h1,h2,h3.serif{font-family:'Playfair Display',Georgia,serif;font-weight:700;line-height:1.15}
-.eyebrow{color:var(--accent2);font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
-.btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:600;font-size:14px;letter-spacing:.04em;cursor:pointer;border:1px solid transparent;transition:.2s}
-.btn.primary{background:var(--accent);color:#fff}.btn.primary:hover{background:#4a80ff}
-.btn.ghost{border-color:var(--line);color:var(--text)}.btn.ghost:hover{border-color:var(--accent2)}
-
-/* nav */
-nav{position:sticky;top:0;z-index:50;background:rgba(7,13,26,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#1a3d99);display:grid;place-items:center;font-weight:700;font-size:13px}
-.brand b{display:block;font-size:15px;letter-spacing:.12em}
-.brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:.2em}
-.links{display:flex;gap:36px;font-size:14px;color:var(--muted)}
-.links a:hover{color:#fff}
-
-/* hero */
-.hero{position:relative;overflow:hidden;padding:110px 0 90px;background:
- radial-gradient(900px 500px at 85% 20%,rgba(47,107,255,.22),transparent 60%),
- linear-gradient(rgba(31,45,74,.35) 1px,transparent 1px) 0 0/48px 48px,
- linear-gradient(90deg,rgba(31,45,74,.35) 1px,transparent 1px) 0 0/48px 48px,var(--bg)}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.hero h1{font-size:64px;margin-bottom:24px}
-.hero h1 span{color:var(--accent2)}
-.hero p{color:var(--muted);font-size:19px;max-width:520px;margin-bottom:36px}
-.hero .cta{display:flex;gap:16px;margin-bottom:40px}
-.tags{display:grid;grid-template-columns:1fr 1fr;gap:10px 28px;font-size:13px;color:var(--muted);max-width:420px}
-.tags li{list-style:none}.tags li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-right:10px}
-.visual{position:relative;aspect-ratio:4/3.4;border:1px solid var(--line);border-radius:10px;background:linear-gradient(160deg,#122244,#0a1226);overflow:hidden}
-.visual svg{position:absolute;inset:0;width:100%;height:100%}
-.badge{position:absolute;left:20px;bottom:20px;background:rgba(7,13,26,.85);border:1px solid var(--line);padding:12px 18px;border-radius:6px;font-size:12px;color:var(--muted)}
-.badge b{display:block;color:#fff;font-size:14px}
-
-/* stats */
-.stats{background:var(--bg2);border-block:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
-.stat{padding:34px 20px;text-align:center;border-right:1px solid var(--line)}
-.stat:last-child{border:0}
-.stat b{display:block;font-size:28px;font-family:'Playfair Display',serif}
-.stat span{font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-
-section{padding:110px 0}
-.head{max-width:620px;margin-bottom:56px}
-.head h2{font-size:44px;margin-bottom:16px}
-.head p{color:var(--muted);font-size:17px}
-
-/* competencies */
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.comp{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);padding:34px 30px;border-radius:6px;transition:.25s}
-.comp:hover{transform:translateY(-4px);border-color:var(--accent2)}
-.comp .n{color:var(--accent2);font-size:13px;font-weight:600;letter-spacing:.1em;margin-bottom:18px}
-.comp h3{font-size:16px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px}
-.comp p{color:var(--muted);font-size:15px}
-
-/* projects */
-.alt{background:var(--bg2);border-block:1px solid var(--line)}
-.projects{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:230px 230px;gap:22px}
-.proj{position:relative;border-radius:8px;overflow:hidden;border:1px solid var(--line);display:flex;align-items:flex-end;padding:24px;background:linear-gradient(160deg,#17294f,#0b1428)}
-.proj:first-child{grid-row:span 2}
-.proj::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 40%,rgba(7,13,26,.92))}
-.proj div{position:relative;z-index:1}
-.proj small{color:var(--accent2);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
-.proj h3{font-size:18px;margin-top:4px}
-.proj.p2{background:linear-gradient(160deg,#2a3550,#101830)}.proj.p3{background:linear-gradient(160deg,#1c3a5e,#0c1a30)}
-.proj.p4{background:linear-gradient(160deg,#25304a,#0e1528)}
-
-/* team */
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.member{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:40px 24px;text-align:center}
-.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--accent),#142a66);display:grid;place-items:center;font-size:28px;font-weight:600;border:3px solid var(--line)}
-.member h3{font-size:20px}.member p{color:var(--muted);font-size:14px;margin-top:4px}
-
-/* estimator */
-.est{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
-.est .head{margin:0}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:40px}
-.panel h3{font-size:14px;letter-spacing:.14em;margin-bottom:26px}
-label{display:block;font-size:12px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin:0 0 8px}
-select{width:100%;padding:14px;background:var(--bg);color:var(--text);border:1px solid var(--line);border-radius:6px;font:inherit;margin-bottom:22px}
-select:focus{outline:2px solid var(--accent)}
-.result{text-align:center;padding:26px 0 22px;border-top:1px solid var(--line);margin-top:6px}
-.result small{font-size:12px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
-.result b{display:block;font-size:44px;font-family:'Playfair Display',serif;color:var(--accent2);margin-top:6px}
-.panel .btn{width:100%;text-align:center}
-.note{font-size:13px;color:var(--muted);text-align:center;margin-top:16px}
-
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:13px}
-footer .wrap{display:flex;justify-content:space-between}
-
-@media(max-width:980px){
- .links{display:none}.hero .wrap,.est{grid-template-columns:1fr}.hero h1{font-size:44px}
- .grid3,.team{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr 1fr;grid-template-rows:auto}
- .proj{min-height:200px}.proj:first-child{grid-row:auto}.stats .wrap{grid-template-columns:1fr 1fr}
-}
-@media(max-width:620px){.grid3,.team,.projects{grid-template-columns:1fr}.wrap{padding:0 20px}.head h2{font-size:34px}}
+:root{--navy:#0b1220;--navy2:#111c2e;--panel:#172337;--blue:#2f6df6;--blue2:#78a5ff;--ink:#f5f7fb;--muted:#a8b4c7;--line:rgba(255,255,255,.12);--paper:#f4f6fa;--darkink:#111b2a;--radius:18px;--max:1180px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--navy);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}
+.topbar{border-bottom:1px solid var(--line);background:rgba(8,14,25,.92);position:sticky;top:0;z-index:10;backdrop-filter:blur(16px)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.09em;font-size:14px}.brandmark{width:38px;height:38px;border-radius:10px;background:var(--blue);display:grid;place-items:center;font-size:20px;font-weight:900;box-shadow:0 8px 24px #2f6df644}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:.17em;font-weight:600;margin-top:1px}.navlinks{display:flex;align-items:center;gap:30px;color:#c1cada;font-size:13px}.navlinks a:hover{color:white}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 18px;border-radius:9px;border:1px solid transparent;font-size:12px;font-weight:800;letter-spacing:.02em;cursor:pointer;transition:.2s}.btn-primary{background:var(--blue);color:white;box-shadow:0 10px 28px #2f6df633}.btn-primary:hover{background:#4b82ff;transform:translateY(-1px)}.btn-outline{border-color:#52617a;color:white;background:transparent}.btn-outline:hover{border-color:var(--blue2)}.menu{display:none;background:none;border:1px solid var(--line);color:white;border-radius:9px;padding:8px 11px}
+.hero{position:relative;overflow:hidden;min-height:610px;display:flex;align-items:center;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 75% 40%,#1b3b71 0%,transparent 36%),linear-gradient(110deg,#0b1220 0%,#0d1728 58%,#101e34 100%)}.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(90deg,black,transparent 95%)}.hero-grid{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center;padding:76px 0}.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:800;color:var(--blue2)}.eyebrow:before{content:"";height:2px;width:26px;background:var(--blue)}h1{font-size:clamp(40px,5.4vw,68px);line-height:1.04;letter-spacing:-.055em;margin:22px 0 20px;max-width:690px}h1 span{color:var(--blue2)}.hero p{color:#b5c0d0;font-size:16px;max-width:520px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-note{display:flex;align-items:center;gap:12px;margin-top:30px;color:#9eabc0;font-size:11px}.pulse{width:8px;height:8px;background:#45d6a2;border-radius:50%;box-shadow:0 0 0 5px #45d6a21c}.hero-art{min-height:390px;position:relative;display:flex;align-items:center;justify-content:center}.blueprint{position:absolute;width:88%;height:88%;border:1px solid #7ca8ff45;border-radius:24px;transform:rotate(-5deg);background:linear-gradient(145deg,#1b3151aa,#0b1424dd);box-shadow:0 35px 80px #0006;overflow:hidden}.blueprint:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#a5c3ff15 1px,transparent 1px),linear-gradient(90deg,#a5c3ff15 1px,transparent 1px);background-size:24px 24px}.blueprint svg{position:absolute;width:100%;height:100%;inset:0}.art-tag{position:absolute;padding:14px 17px;border:1px solid #ffffff22;border-radius:12px;background:#101b2ddd;backdrop-filter:blur(12px);box-shadow:0 15px 40px #0005}.art-tag strong{display:block;font-size:19px;letter-spacing:-.04em}.art-tag span{font-size:10px;color:#aab8ce}.tag-one{left:0;bottom:35px}.tag-two{right:-4px;top:45px}
+.stats{background:#0d1727;border-bottom:1px solid var(--line)}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:26px 0}.stat{padding:8px 24px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}.stat strong{font-size:30px;line-height:1.2;letter-spacing:-.04em}.stat span{display:block;color:var(--muted);font-size:11px;margin-top:6px}
+section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:38px}.section-head h2{font-size:clamp(30px,4vw,42px);line-height:1.12;letter-spacing:-.045em;margin:12px 0 0}.section-head p{max-width:420px;color:var(--muted);font-size:14px;margin:0}.services{background:#111c2e}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service{padding:28px;background:#0d1727;border:1px solid var(--line);border-radius:14px;min-height:220px;transition:.22s;position:relative;overflow:hidden}.service:hover{transform:translateY(-4px);border-color:#477cf7}.service-icon{width:44px;height:44px;border:1px solid #4b7ff855;background:#2f6df61c;color:#91b3ff;border-radius:12px;display:grid;place-items:center;font-size:21px}.service h3{font-size:17px;margin:22px 0 8px;letter-spacing:-.02em}.service p{font-size:13px;color:var(--muted);margin:0;max-width:310px}.service .number{position:absolute;right:24px;top:24px;font-size:11px;color:#62718a;letter-spacing:.12em}
+.projects{background:var(--paper);color:var(--darkink)}.projects .section-head p{color:#647084}.project-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:16px}.project{border-radius:15px;overflow:hidden;background:white;border:1px solid #e1e6ef;box-shadow:0 12px 30px #10203a0a}.project-visual{height:220px;position:relative;overflow:hidden;background:#d5dfeb}.project:first-child .project-visual{height:280px}.project-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#07111ecb,transparent 60%)}.project-visual svg{width:100%;height:100%;display:block}.project-label{position:absolute;z-index:1;bottom:16px;left:17px;color:white;font-size:10px;text-transform:uppercase;letter-spacing:.12em}.project-body{padding:19px}.project-body h3{font-size:16px;margin:0 0 7px}.project-body p{font-size:12px;color:#6c788b;margin:0}.project-meta{display:flex;justify-content:space-between;gap:12px;margin-top:18px;padding-top:13px;border-top:1px solid #e8edf3;font-size:10px;color:#718096}
+.process{background:#0b1220}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.step{border-top:1px solid #3b4b65;padding-top:18px}.step-no{font-size:11px;color:var(--blue2);letter-spacing:.12em;font-weight:800}.step h3{font-size:16px;margin:15px 0 8px}.step p{font-size:12px;color:var(--muted);margin:0}
+.team{background:#111c2e}.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.person{padding:24px;border:1px solid var(--line);border-radius:14px;background:#0d1727;display:flex;align-items:center;gap:16px}.avatar{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#315d9d,#17243b);border:2px solid #5f8ef5;color:white;font-size:18px;font-weight:800;flex-shrink:0}.person h3{font-size:14px;margin:0 0 4px}.person p{font-size:11px;color:var(--muted);margin:0}
+.estimate{background:#f4f6fa;color:var(--darkink)}.estimate-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}.estimate-copy h2{font-size:clamp(32px,4vw,46px);line-height:1.08;letter-spacing:-.05em;margin:14px 0}.estimate-copy p{color:#657287;font-size:14px;max-width:390px}.contact-list{margin-top:30px;display:grid;gap:13px;color:#3c4a5e;font-size:12px}.contact-list span{display:flex;gap:10px;align-items:center}.estimate-card{background:white;border:1px solid #e0e6ef;border-radius:18px;padding:28px;box-shadow:0 24px 60px #0b1b3212}.estimate-card h3{font-size:18px;margin:0 0 5px}.estimate-card>p{font-size:12px;color:#718096;margin:0 0 24px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field{display:grid;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#59677b}.field input,.field select{width:100%;padding:13px 12px;border:1px solid #dce3ed;border-radius:8px;background:#fbfcfe;color:#162235;outline:none;font-size:12px}.field input:focus,.field select:focus{border-color:#477cf7;box-shadow:0 0 0 3px #477cf71a}.estimate-result{margin-top:22px;padding:20px;border-radius:12px;background:#0f1a2b;color:white;text-align:center}.estimate-result span{display:block;color:#b3bfd2;font-size:10px;text-transform:uppercase;letter-spacing:.13em}.estimate-result strong{display:block;color:#80a8ff;font-size:clamp(28px,4vw,38px);letter-spacing:-.04em;margin:8px 0}.estimate-result small{color:#aab6c9;font-size:10px}.estimate-card .btn{width:100%;margin-top:14px}.disclaimer{font-size:10px!important;color:#8290a4!important;margin:12px 0 0!important;text-align:center}
+.footer{background:#070d17;padding:38px 0;border-top:1px solid var(--line)}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:22px}.footer p{color:#8997ab;font-size:11px;margin:8px 0 0}.footer-links{display:flex;gap:20px;color:#b7c2d3;font-size:11px}
+@media(max-width:900px){.navlinks{gap:16px}.hero-grid{grid-template-columns:1fr .8fr;gap:18px}.hero-art{min-height:320px}.service-grid{grid-template-columns:repeat(2,1fr)}.project-grid{grid-template-columns:repeat(2,1fr)}.project:first-child{grid-column:span 2}.process-grid{grid-template-columns:repeat(2,1fr);row-gap:28px}.estimate-wrap{gap:30px}.team-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.wrap{width:min(100% - 32px,var(--max))}.nav{height:66px}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 20px 22px;background:#0b1220;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 0;border-bottom:1px solid #ffffff0c}.nav .btn{display:none}.menu{display:block}.brandmark{width:34px;height:34px}.hero{min-height:0}.hero-grid{grid-template-columns:1fr;padding:65px 0 44px;gap:25px}.hero h1{font-size:43px;max-width:500px}.hero p{font-size:14px}.hero-art{min-height:245px;margin:0 6px}.blueprint{width:84%;height:90%}.tag-one{left:-4px;bottom:8px}.tag-two{right:-4px;top:7px}.art-tag{padding:10px 12px}.art-tag strong{font-size:16px}.stats-grid{grid-template-columns:repeat(2,1fr);padding:12px 0}.stat{padding:15px 12px;border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3){padding-left:0;border-bottom:0}.stat:last-child{border-bottom:0}.stat strong{font-size:25px}section{padding:68px 0}.section-head{display:block;margin-bottom:27px}.section-head p{margin-top:15px}.section-head h2{font-size:34px}.service-grid{grid-template-columns:1fr;gap:10px}.service{min-height:0;padding:22px}.service h3{margin-top:16px}.project-grid{grid-template-columns:1fr;gap:14px}.project:first-child{grid-column:auto}.project-visual,.project:first-child .project-visual{height:205px}.project-body{padding:16px}.process-grid{grid-template-columns:1fr 1fr;gap:24px 16px}.team-grid{gap:10px}.person{padding:18px}.estimate-wrap{grid-template-columns:1fr;gap:28px}.estimate-card{padding:20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.estimate-copy h2{font-size:38px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:15px}.hero-actions .btn{flex:1}.hero-actions{gap:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
 <body>
-
-<nav><div class="wrap">
-  <a class="brand" href="#top"><div class="logo">CB</div><div><b>COLOSSAL BRIDGE</b><small>CONSTRUCTION NIG. LTD</small></div></a>
-  <div class="links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#team">Leadership</a><a href="#estimate">Estimator</a></div>
-  <a class="btn primary" href="#estimate">Get a Quote</a>
-</div></nav>
-
-<header class="hero" id="top"><div class="wrap">
-  <div>
-    <div class="eyebrow">RC 1950370 · Nigeria</div>
-    <h1>Building the <span>Infrastructure</span> of Tomorrow.</h1>
-    <p>General construction work and consultancy. We deliver world-class bridges, roads, and civil engineering projects.</p>
-    <div class="cta"><a class="btn primary" href="#estimate">Estimate Your Project →</a><a class="btn ghost" href="#projects">View Our Portfolio</a></div>
-    <ul class="tags"><li>Bridge Construction</li><li>Road Networks</li><li>Civil Engineering</li><li>Project Consultancy</li></ul>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Colossal Bridge home"><span class="brandmark">C</span><span>COLOSSAL BRIDGE<small>CONSTRUCTION NIG. LTD</small></span></a>
+    <nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#process">Our process</a><a href="#team">Leadership</a><a href="#estimate">Cost estimator</a></nav>
+    <a class="btn btn-primary" href="#estimate">REQUEST A QUOTE <span>↗</span></a>
+    <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
   </div>
-  <div class="visual">
-    <svg viewBox="0 0 400 340" fill="none" stroke="#5b8cff" stroke-width="2">
-      <path d="M0 250 H400" stroke="#1f2d4a"/>
-      <path d="M30 250 V120 M370 250 V120" stroke-width="6"/>
-      <path d="M30 120 Q200 260 370 120" stroke-width="3"/>
-      <g stroke-width="1.4" opacity=".8"><path d="M70 250V164M110 250V190M150 250V208M190 250V214M230 250V208M270 250V190M310 250V164"/></g>
-      <path d="M0 250 H400" stroke="#5b8cff" stroke-width="3"/>
-      <path d="M0 290 Q100 270 200 290 T400 290" stroke="#1f2d4a"/>
-    </svg>
-    <div class="badge"><b>Bridges · Roads · Buildings</b>Delivered to international standards</div>
+</header>
+<main>
+<section class="hero" id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">RC 1950370 · NIGERIA</div>
+      <h1>Building the infrastructure of <span>tomorrow.</span></h1>
+      <p>Reliable construction, civil engineering and consultancy. We deliver durable infrastructure, precision-led execution and projects built to stand the test of time.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="#estimate">DISCUSS YOUR PROJECT ↗</a><a class="btn btn-outline" href="#projects">EXPLORE OUR WORK</a></div>
+      <div class="hero-note"><span class="pulse"></span> Built on safety, integrity and measurable quality.</div>
+    </div>
+    <div class="hero-art" aria-label="Abstract architectural blueprint illustration">
+      <div class="blueprint"><svg viewBox="0 0 500 430" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M65 330L65 185L165 130L265 185L265 330M65 185L165 240L265 185M165 130V240M110 210V305M220 210V305M290 330V140L370 95L450 140V330M290 140L370 185L450 140M370 95V185M315 190V305M425 190V305M45 330H470M90 365H430" stroke="#8DB5FF" stroke-width="2"/><path d="M35 350L165 280L295 350L425 280" stroke="#3D75D9" stroke-width="1.5" stroke-dasharray="6 7"/><path d="M65 185L65 95L165 40L265 95V185M65 95L165 150L265 95M165 40V150" stroke="#8DB5FF" stroke-width="1.5" opacity=".55"/><circle cx="370" cy="185" r="6" fill="#76A5FF"/><circle cx="165" cy="240" r="6" fill="#76A5FF"/></svg></div>
+      <div class="art-tag tag-one"><strong>50+</strong><span>Projects delivered</span></div><div class="art-tag tag-two"><strong>100%</strong><span>Commitment to quality</span></div>
+    </div>
   </div>
-</div></header>
-
-<div class="stats"><div class="wrap">
-  <div class="stat"><b>RC 1950370</b><span>CAC Registered</span></div>
-  <div class="stat"><b>15+ Years</b><span>Industry Experience</span></div>
-  <div class="stat"><b>50+</b><span>Major Infrastructure Projects</span></div>
-  <div class="stat"><b>100%</b><span>Safety-Compliant Sites</span></div>
-</div></div>
-
-<section id="services"><div class="wrap">
-  <div class="head"><div class="eyebrow">Core Competencies</div><h2>Engineering Excellence</h2><p>From feasibility studies to final execution, we handle complex civil works with precision.</p></div>
-  <div class="grid3">
-    <div class="comp"><div class="n">01</div><h3>Bridge &amp; Infrastructure</h3><p>Design and construction of pedestrian, highway, and river-crossing bridges.</p></div>
-    <div class="comp"><div class="n">02</div><h3>Road Construction</h3><p>Asphalt paving, drainage systems, and major highway rehabilitation.</p></div>
-    <div class="comp"><div class="n">03</div><h3>Civil Consultancy</h3><p>Structural analysis, project management, and site supervision for complex builds.</p></div>
-    <div class="comp"><div class="n">04</div><h3>General Building</h3><p>Turnkey commercial and industrial facilities constructed to international standards.</p></div>
-    <div class="comp"><div class="n">05</div><h3>Heavy Earthworks</h3><p>Excavation, land reclamation, and grading for large-scale sites.</p></div>
-    <div class="comp"><div class="n">06</div><h3>Facility Maintenance</h3><p>Ongoing structural integrity checks and maintenance for public infrastructure.</p></div>
+</section>
+<div class="stats"><div class="wrap stats-grid"><div class="stat"><strong>10+</strong><span>Years of industry experience</span></div><div class="stat"><strong>50+</strong><span>Projects across key sectors</span></div><div class="stat"><strong>6</strong><span>Core service disciplines</span></div><div class="stat"><strong>100%</strong><span>Quality-led project delivery</span></div></div></div>
+<section class="services" id="services"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">WHAT WE DO</div><h2>Engineering excellence.<br>Built into every detail.</h2></div><p>From feasibility and planning to construction and handover, our team brings practical expertise and disciplined project management to every brief.</p></div>
+  <div class="service-grid">
+    <article class="service"><span class="number">01 / 06</span><div class="service-icon">⌁</div><h3>Bridge & Infrastructure</h3><p>Design and construction of pedestrian, highway and major infrastructure projects.</p></article>
+    <article class="service"><span class="number">02 / 06</span><div class="service-icon">↗</div><h3>Road Construction</h3><p>Road development, drainage systems, asphalt paving and rehabilitation.</p></article>
+    <article class="service"><span class="number">03 / 06</span><div class="service-icon">▦</div><h3>Civil Consultancy</h3><p>Structural analysis, project management and site supervision for complex builds.</p></article>
+    <article class="service"><span class="number">04 / 06</span><div class="service-icon">⌂</div><h3>General Building</h3><p>Commercial and industrial facilities planned for durability and performance.</p></article>
+    <article class="service"><span class="number">05 / 06</span><div class="service-icon">◫</div><h3>Heavy Earthworks</h3><p>Excavation, land reclamation and grading for large-scale sites.</p></article>
+    <article class="service"><span class="number">06 / 06</span><div class="service-icon">◈</div><h3>Facility Maintenance</h3><p>Ongoing structural integrity checks and maintenance for public infrastructure.</p></article>
   </div>
 </div></section>
-
-<section class="alt" id="projects"><div class="wrap">
-  <div class="head"><div class="eyebrow">Track Record</div><h2>Major Projects</h2><p>A showcase of our heavy infrastructure and civil engineering works.</p></div>
-  <div class="projects">
-    <div class="proj"><div><small>In Execution</small><h3>River Crossing Bridge</h3></div></div>
-    <div class="proj p2"><div><small>Road Works</small><h3>Federal Highway</h3></div></div>
-    <div class="proj p3"><div><small>Building</small><h3>Commercial Complex</h3></div></div>
-    <div class="proj p4"><div><small>Earthworks</small><h3>Site Reclamation</h3></div></div>
-    <div class="proj p2"><div><small>Consultancy</small><h3>Structural Review</h3></div></div>
+<section class="projects" id="projects"><div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">SELECTED EXPERIENCE</div><h2>Projects that move<br>communities forward.</h2></div><p>A snapshot of the types of infrastructure and civil engineering work we undertake. Replace these concept visuals with verified project photography and case studies.</p></div>
+  <div class="project-grid">
+    <article class="project"><div class="project-visual"><svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="road" x2="0" y2="1"><stop stop-color="#aab8c8"/><stop offset="1" stop-color="#34465b"/></linearGradient></defs><rect width="500" height="300" fill="#aebfd0"/><path d="M0 130L150 70L290 120L500 60V300H0Z" fill="#8298a9"/><path d="M130 300L220 90H290L410 300Z" fill="url(#road)"/><path d="M258 120L275 120L345 300H325Z" fill="#f8d76a"/><path d="M0 240L130 170L170 180L0 280Z" fill="#647e6e"/><path d="M410 180L500 120V300H450Z" fill="#6f8976"/><g stroke="#e7edf3" stroke-width="3"><path d="M240 180L225 210M260 230L245 260M282 280L275 300"/></g></svg><span class="project-label">Roads & transport</span></div><div class="project-body"><h3>Road Infrastructure</h3><p>Road development and rehabilitation with a focus on dependable access.</p><div class="project-meta"><span>TRANSPORT</span><span>VIEW PROJECT ↗</span></div></div></article>
+    <article class="project"><div class="project-visual"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#b8c8d4"/><path d="M0 200L100 120L170 155L260 80L400 150V260H0Z" fill="#7e9aab"/><path d="M-20 190L130 110L210 140L420 45" stroke="#edf4fa" stroke-width="28"/><path d="M-20 190L130 110L210 140L420 45" stroke="#526a7c" stroke-width="19"/><path d="M-20 190L130 110L210 140L420 45" stroke="#f7d87c" stroke-width="2" stroke-dasharray="12 10"/><path d="M0 230H400" stroke="#607d69" stroke-width="35"/></svg><span class="project-label">Civil engineering</span></div><div class="project-body"><h3>Drainage & Site Works</h3><p>Site preparation and essential civil infrastructure.</p><div class="project-meta"><span>CIVIL WORKS</span><span>VIEW PROJECT ↗</span></div></div></article>
+    <article class="project"><div class="project-visual"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#9aafbf"/><path d="M0 190L400 140V260H0Z" fill="#637b89"/><g fill="#d9e3eb" stroke="#738a9d" stroke-width="3"><rect x="50" y="70" width="85" height="120"/><rect x="155" y="35" width="105" height="155"/><rect x="280" y="85" width="75" height="105"/></g><g stroke="#8196a7" stroke-width="3"><path d="M70 95H115M70 120H115M70 145H115M180 65H235M180 95H235M180 125H235M300 110H340M300 140H340"/></g><path d="M0 190H400" stroke="#e5edf4" stroke-width="5"/></svg><span class="project-label">Building construction</span></div><div class="project-body"><h3>Commercial Buildings</h3><p>Purpose-built facilities designed for long-term use.</p><div class="project-meta"><span>BUILDING</span><span>VIEW PROJECT ↗</span></div></div></article>
   </div>
 </div></section>
-
-<section id="team"><div class="wrap">
-  <div class="head"><div class="eyebrow">Leadership</div><h2>Meet the Team</h2></div>
-  <div class="team">
-    <div class="member"><div class="avatar">AG</div><h3 class="serif">Ahmad Muhammad Garba</h3><p>Managing Director</p></div>
-    <div class="member"><div class="avatar">SO</div><h3 class="serif">Engr. Sarah O.</h3><p>Head of Civil Engineering</p></div>
-    <div class="member"><div class="avatar">DK</div><h3 class="serif">Arc. David K.</h3><p>Project Director</p></div>
-  </div>
-</div></section>
-
-<section class="alt" id="estimate"><div class="wrap est">
-  <div class="head"><div class="eyebrow">Project Estimator</div><h2>Calculate Your Civil Works.</h2><p>Get a preliminary budget estimate for your infrastructure project. Send it directly to our engineering team on WhatsApp.</p></div>
-  <div class="panel">
-    <h3>ESTIMATE CIVIL WORKS</h3>
-    <label for="scope">Project Scope</label>
-    <select id="scope"><option value="150000000">Bridge Construction</option><option value="90000000">Road Construction</option><option value="120000000">General Building</option><option value="45000000">Heavy Earthworks</option><option value="15000000">Civil Consultancy</option></select>
-    <label for="scale">Project Scale</label>
-    <select id="scale"><option value="1.5">Small (under 1 km / 1–2 houses)</option><option value="3">Medium</option><option value="6">Large</option></select>
-    <label for="terrain">Site Terrain</label>
-    <select id="terrain"><option value="1">Standard (Flat Terrain)</option><option value="1.3">Swampy / Waterlogged</option><option value="1.5">Rocky / Hilly</option></select>
-    <div class="result"><small>Preliminary Budget Estimate</small><b id="out">₦225,000,000</b></div>
-    <a class="btn primary" id="wa" href="#" target="_blank" rel="noopener">SEND TO ENGINEERING TEAM →</a>
-    <p class="note">Indicative figures only. Final cost requires a site survey and BOQ.</p>
-  </div>
-</div></section>
-
-<footer><div class="wrap"><span>© 2026 Colossal Bridge Construction Nig. Ltd. RC 1950370</span><span>Built by OProducts Studio</span></div></footer>
-
+<section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="eyebrow">HOW WE WORK</div><h2>Clarity from first brief<br>to final handover.</h2></div><p>A transparent process helps clients understand scope, cost, timing and responsibility before work begins.</p></div><div class="process-grid"><div class="step"><span class="step-no">STEP 01</span><h3>Understand</h3><p>We review your goals, site conditions, constraints and required outcomes.</p></div><div class="step"><span class="step-no">STEP 02</span><h3>Plan & estimate</h3><p>We define scope, technical approach, preliminary costs and delivery milestones.</p></div><div class="step"><span class="step-no">STEP 03</span><h3>Execute</h3><p>Our team coordinates resources, quality checks, safety and project updates.</p></div><div class="step"><span class="step-no">STEP 04</span><h3>Handover</h3><p>We complete inspections, document deliverables and agree on next steps.</p></div></div></div></section>
+<section class="team" id="team"><div class="wrap"><div class="section-head"><div><div class="eyebrow">LEADERSHIP</div><h2>Experienced people.<br>Accountable delivery.</h2></div><p>Introduce the people responsible for technical quality, project oversight and client communication.</p></div><div class="team-grid"><article class="person"><div class="avatar">AG</div><div><h3>Ahmad Muhammad Garba</h3><p>Managing Director</p></div></article><article class="person"><div class="avatar">SO</div><div><h3>Engr. Sarah O.</h3><p>Head of Civil Engineering</p></div></article><article class="person"><div class="avatar">DK</div><div><h3>Arc. David K.</h3><p>Project Director</p></div></article></div></div></section>
+<section class="estimate" id="estimate"><div class="wrap estimate-wrap"><div class="estimate-copy"><div class="eyebrow">PROJECT ESTIMATOR</div><h2>Start with a clearer project budget.</h2><p>Share a few project details to generate an illustrative preliminary estimate. A formal quotation requires a site assessment, drawings and a confirmed bill of quantities.</p><div class="contact-list"><span>↗ &nbsp; Scope and requirements review</span><span>↗ &nbsp; Site-specific technical assessment</span><span>↗ &nbsp; Detailed quotation and work schedule</span></div></div>
+<form class="estimate-card" id="estimator"><h3>Estimate civil works</h3><p>Adjust the assumptions to explore an indicative budget.</p><div class="form-grid"><div class="field full"><label for="scope">Project scope</label><select id="scope"><option value="1">General civil works</option><option value="1.25">Road construction</option><option value="1.4">Drainage & infrastructure</option><option value="1.6">Commercial building</option><option value=".8">Earthworks & site preparation</option></select></div><div class="field"><label for="scale">Project scale</label><select id="scale"><option value="0.5">Small</option><option value="1" selected>Medium</option><option value="2.2">Large</option><option value="4">Major infrastructure</option></select></div><div class="field"><label for="terrain">Site terrain</label><select id="terrain"><option value="1">Normal / prepared</option><option value="1.15">Uneven terrain</option><option value="1.3">Difficult / remote</option></select></div><div class="field full"><label for="location">Project location</label><input id="location" placeholder="e.g. Jimeta, Adamawa State"></div></div><div class="estimate-result"><span>Illustrative preliminary estimate</span><strong id="estimateValue">₦225,000,000</strong><small>Planning figure only · Not a formal quotation</small></div><button class="btn btn-primary" type="button" id="requestQuote">REQUEST A FORMAL QUOTE ↗</button><p class="disclaimer">This sample estimator uses demonstration assumptions. Replace its calculation model with validated rates and a quantity-surveying workflow before publishing.</p></form></div></section>
+</main>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="#home"><span class="brandmark">C</span><span>COLOSSAL BRIDGE<small>CONSTRUCTION NIG. LTD</small></span></a><p>Built with integrity. Delivered with precision.</p></div><div class="footer-links"><a href="#services">Services</a><a href="#projects">Projects</a><a href="#estimate">Contact</a></div><p>© <span id="year"></span> Colossal Bridge Construction Nig. Ltd. (RC 1950370)</p></div></footer>
 <script>
-const WHATSAPP = "2349063200718"; // Updated to OProducts number
-const $ = id => document.getElementById(id);
-function calc(){
-  const total = $("scope").value * $("scale").value * $("terrain").value;
-  const money = "₦" + Math.round(total).toLocaleString("en-NG");
-  $("out").textContent = money;
-  const t = id => $(id).selectedOptions[0].text;
-  const msg = `Hello Colossal Bridge, I'd like a quote.\nScope: ${t("scope")}\nScale: ${t("scale")}\nTerrain: ${t("terrain")}\nEstimate: ${money}`;
-  $("wa").href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
-}
-["scope","scale","terrain"].forEach(i => $(i).addEventListener("change", calc));
-calc();
+const menu=document.getElementById('menu'),nav=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'✕':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰'}));
+const scope=document.getElementById('scope'),scale=document.getElementById('scale'),terrain=document.getElementById('terrain'),estimateValue=document.getElementById('estimateValue');
+function updateEstimate(){const base=225000000;const total=base*Number(scope.value)*Number(scale.value)*Number(terrain.value);estimateValue.textContent='₦'+Math.round(total/1000000).toLocaleString('en-NG')+',000,000';}
+[scope,scale,terrain].forEach(el=>el.addEventListener('change',updateEstimate));
+document.getElementById('requestQuote').addEventListener('click',()=>{const loc=document.getElementById('location').value.trim();const message='Hello Colossal Bridge, I would like to request a formal civil works quotation. Scope: '+scope.options[scope.selectedIndex].text+'. Scale: '+scale.options[scale.selectedIndex].text+'. Terrain: '+terrain.options[terrain.selectedIndex].text+'. Location: '+(loc||'Not specified')+'. Preliminary estimate shown: '+estimateValue.textContent+'. Please advise on the next steps.';window.location.href='https://wa.me/2349063200718?text='+encodeURIComponent(message)});
+document.getElementById('year').textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
