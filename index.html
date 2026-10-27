@@ -21,6 +21,86 @@ section{padding:100px 0}.section-head{display:flex;justify-content:space-between
 @media(max-width:640px){.wrap{width:min(100% - 32px,var(--max))}.nav{height:66px}.navlinks{display:none;position:absolute;top:66px;left:0;right:0;padding:18px 20px 22px;background:#0b1220;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 0;border-bottom:1px solid #ffffff0c}.nav .btn{display:none}.menu{display:block}.brandmark{width:34px;height:34px}.hero{min-height:0}.hero-grid{grid-template-columns:1fr;padding:65px 0 44px;gap:25px}.hero h1{font-size:43px;max-width:500px}.hero p{font-size:14px}.hero-art{min-height:245px;margin:0 6px}.blueprint{width:84%;height:90%}.tag-one{left:-4px;bottom:8px}.tag-two{right:-4px;top:7px}.art-tag{padding:10px 12px}.art-tag strong{font-size:16px}.stats-grid{grid-template-columns:repeat(2,1fr);padding:12px 0}.stat{padding:15px 12px;border-bottom:1px solid var(--line)}.stat:nth-child(2){border-right:0}.stat:nth-child(3){padding-left:0;border-bottom:0}.stat:last-child{border-bottom:0}.stat strong{font-size:25px}section{padding:68px 0}.section-head{display:block;margin-bottom:27px}.section-head p{margin-top:15px}.section-head h2{font-size:34px}.service-grid{grid-template-columns:1fr;gap:10px}.service{min-height:0;padding:22px}.service h3{margin-top:16px}.project-grid{grid-template-columns:1fr;gap:14px}.project:first-child{grid-column:auto}.project-visual,.project:first-child .project-visual{height:205px}.project-body{padding:16px}.process-grid{grid-template-columns:1fr 1fr;gap:24px 16px}.team-grid{gap:10px}.person{padding:18px}.estimate-wrap{grid-template-columns:1fr;gap:28px}.estimate-card{padding:20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.estimate-copy h2{font-size:38px}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap;gap:15px}.hero-actions .btn{flex:1}.hero-actions{gap:9px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
+
+<style>
+/* --- PREMIUM LIGHT CORPORATE THEME OVERRIDE --- */
+:root {
+  --navy: #ffffff;
+  --navy2: #f8fafc;
+  --panel: #ffffff;
+  --blue: #1d4ed8;
+  --blue2: #1e40af;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --paper: #f8fafc;
+  --darkink: #0f172a;
+}
+
+body, .hero, .topbar, .stats, .services, .process, .team, .footer, .estimate {
+  background-color: var(--navy) !important;
+  color: var(--ink) !important;
+}
+
+/* Nav */
+.topbar { background: rgba(255, 255, 255, 0.95) !important; border-bottom: 1px solid var(--line) !important; }
+.navlinks a { color: var(--muted) !important; }
+.navlinks a:hover { color: var(--ink) !important; }
+.brand { color: var(--ink) !important; }
+.brand small { color: var(--muted) !important; }
+
+/* Hero */
+.hero { background: #f8fafc !important; border-bottom: 1px solid var(--line) !important; }
+.hero:before { background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px) !important; mask-image: linear-gradient(90deg, black, transparent 95%) !important; }
+.hero p { color: var(--muted) !important; }
+.blueprint { background: #ffffff !important; border: 1px solid #cbd5e1 !important; box-shadow: 0 20px 40px rgba(0,0,0,0.05) !important; }
+.blueprint svg path { stroke: #94a3b8 !important; }
+.blueprint svg path[stroke="#8DB5FF"] { stroke: #1d4ed8 !important; }
+.blueprint svg path[stroke="#3D75D9"] { stroke: #94a3b8 !important; }
+.blueprint svg circle { fill: #1d4ed8 !important; }
+.art-tag { background: #ffffff !important; border: 1px solid #e2e8f0 !important; box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important; color: var(--ink) !important; }
+.art-tag span { color: var(--muted) !important; }
+
+/* Stats */
+.stats { border-bottom: 1px solid var(--line) !important; }
+.stat { border-right: 1px solid var(--line) !important; }
+.stat strong { color: var(--ink) !important; }
+.stat span { color: var(--muted) !important; }
+
+/* Services / Process / Team */
+.service, .person, .step { background: #ffffff !important; border: 1px solid var(--line) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.02) !important; }
+.service:hover { border-color: #1d4ed8 !important; box-shadow: 0 10px 25px rgba(29,78,216,0.1) !important; }
+.service h3, .person h3, .step h3 { color: var(--ink) !important; }
+.service p, .person p, .step p { color: var(--muted) !important; }
+.service-icon { background: #eff6ff !important; border: 1px solid #bfdbfe !important; color: #1d4ed8 !important; }
+.number, .step-no { color: #94a3b8 !important; }
+
+/* Projects */
+.projects { background: #f8fafc !important; }
+.project { background: #ffffff !important; border: 1px solid var(--line) !important; box-shadow: 0 4px 15px rgba(0,0,0,0.03) !important; }
+.project-body h3 { color: var(--ink) !important; }
+.project-body p { color: var(--muted) !important; }
+.project-meta { border-top: 1px solid var(--line) !important; color: #94a3b8 !important; }
+
+/* Estimate Section */
+.estimate-copy h2 { color: var(--ink) !important; }
+.estimate-copy p { color: var(--muted) !important; }
+.estimate-card { background: #ffffff !important; border: 1px solid var(--line) !important; box-shadow: 0 20px 40px rgba(0,0,0,0.06) !important; }
+.field input, .field select { background: #f8fafc !important; border: 1px solid var(--line) !important; color: var(--ink) !important; }
+.estimate-result { background: #f8fafc !important; border: 1px solid var(--line) !important; }
+.estimate-result span { color: var(--muted) !important; }
+.estimate-result strong { color: #1d4ed8 !important; }
+.estimate-result small { color: var(--muted) !important; }
+.disclaimer { color: var(--muted) !important; }
+
+/* Footer */
+.footer { background: #ffffff !important; border-top: 1px solid var(--line) !important; }
+.footer p, .footer-links a { color: var(--muted) !important; }
+
+/* Nav Menu (Mobile) */
+@media(max-width:640px){ .navlinks { background: #ffffff !important; border-bottom: 1px solid var(--line) !important; } }
+</style>
+
 </head>
 <body>
 <header class="topbar">
