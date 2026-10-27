@@ -54,6 +54,42 @@ h1, h2, h3, p { text-wrap: balance; word-break: normal; overflow-wrap: break-wor
 .hero p { line-height: 1.6; text-wrap: pretty; }
 </style>
 
+
+<style>
+/* --- MOBILE & TABLET LAYOUT FIXES --- */
+@media (max-width: 768px) {
+  /* Force single column for Process so text doesn't squish */
+  .process-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
+  
+  /* Fix Estimator Heading Size */
+  .estimate-copy h2 { font-size: 32px !important; line-height: 1.2 !important; margin-bottom: 16px !important; }
+  .estimate-copy p { font-size: 14px !important; line-height: 1.6 !important; }
+  
+  /* Make sure cards have breathing room */
+  .service { padding: 24px !important; }
+  .person { padding: 24px !important; flex-direction: column !important; text-align: center !important; gap: 12px !important; }
+  .person h3 { font-size: 16px !important; }
+  
+  /* Section headers */
+  .section-head h2 { font-size: 28px !important; line-height: 1.2 !important; }
+  .section-head p { margin-top: 12px !important; font-size: 14px !important; }
+}
+
+/* --- TYPOGRAPHY PROTECTION --- */
+h1, h2, h3, h4, p, span, a { 
+  word-break: normal !important; 
+  overflow-wrap: break-word !important; 
+  hyphens: none !important;
+}
+
+/* Fix the form grid on mobile */
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+  .estimate-card { padding: 20px !important; }
+  .estimate-result strong { font-size: 28px !important; }
+}
+</style>
+
 </head>
 <body>
 <header class="topbar">
