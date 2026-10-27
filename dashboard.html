@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CBC Admin Portal | Enterprise Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #070d1a; --navy-light: #0c1426; --card: #111b31;
+  --line: #1f2d4a; --text: #e8edf7; --muted: #92a0ba;
+  --accent: #2f6bff; --accent-glow: rgba(47,107,255,0.15);
+  --green: #10B981; --orange: #F59E0B; --red: #EF4444;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: var(--navy); color: var(--text); display: flex; height: 100vh; overflow: hidden; }
+h2 { font-size: 1.2rem; color: #fff; margin-bottom: 20px; }
+
+/* Sidebar */
+.sidebar { width: 260px; background: var(--navy-light); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10; }
+.brand-wrap { display: flex; align-items: center; gap: 12px; padding: 24px; border-bottom: 1px solid var(--line); }
+.logo-mark { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #1a3d99); display: grid; place-items: center; font-weight: 700; font-size: 11px; color: #fff; }
+.brand-text { font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; color: #fff; }
+.brand-text span { display: block; font-size: 0.6rem; color: var(--muted); letter-spacing: 0.1em; }
+.nav-menu { padding: 20px 0; flex: 1; }
+.nav-item { display: flex; align-items: center; gap: 12px; padding: 14px 24px; color: var(--muted); text-decoration: none; font-weight: 500; font-size: 0.9rem; transition: 0.2s; cursor: pointer; border-left: 3px solid transparent; }
+.nav-item:hover, .nav-item.active { background: rgba(47,107,255,0.08); color: #fff; border-left-color: var(--accent); }
+
+/* Main Content */
+.main-content { flex: 1; display: flex; flex-direction: column; overflow-y: auto; }
+.topbar { background: var(--navy-light); padding: 16px 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+.topbar h1 { font-size: 1.25rem; color: #fff; font-weight: 600; }
+.user-profile { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; color: #fff; }
+.avatar { width: 36px; height: 36px; background: var(--accent); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+/* View Containers */
+.view-section { display: none; padding: 32px; flex-direction: column; gap: 24px; animation: fadeIn 0.3s ease; }
+.view-section.active { display: flex; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Grids & Cards */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.kpi-card { background: var(--card); padding: 24px; border-radius: 8px; border: 1px solid var(--line); }
+.kpi-title { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+.kpi-value { font-size: 1.8rem; font-weight: 700; color: #fff; }
+.kpi-trend { font-size: 0.8rem; color: var(--green); margin-top: 8px; font-weight: 500; }
+
+/* Tables */
+.table-card { background: var(--card); border-radius: 8px; border: 1px solid var(--line); overflow: hidden; }
+.table-header { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; }
+.table-header h2 { margin: 0; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th { background: var(--navy); padding: 12px 24px; font-size: 0.75rem; text-transform: uppercase; color: var(--muted); font-weight: 600; border-bottom: 1px solid var(--line); letter-spacing: 0.05em; }
+td { padding: 16px 24px; border-bottom: 1px solid var(--line); font-size: 0.9rem; color: var(--text); }
+tr:last-child td { border-bottom: none; }
+.badge { padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 600; display: inline-block; }
+.badge.green { background: rgba(16, 185, 129, 0.1); color: var(--green); border: 1px solid rgba(16, 185, 129, 0.2); }
+.badge.blue { background: rgba(47, 107, 255, 0.1); color: var(--accent); border: 1px solid rgba(47, 107, 255, 0.2); }
+.badge.orange { background: rgba(245, 158, 11, 0.1); color: var(--orange); border: 1px solid rgba(245, 158, 11, 0.2); }
+.badge.red { background: rgba(239, 68, 68, 0.1); color: var(--red); border: 1px solid rgba(239, 68, 68, 0.2); }
+
+/* Mobile */
+@media (max-width: 768px) {
+  body { flex-direction: column; }
+  .sidebar { width: 100%; height: auto; flex-direction: row; overflow-x: auto; padding: 10px; align-items: center; justify-content: space-between; position: sticky; top: 0; border-right: none; border-bottom: 1px solid var(--line); }
+  .brand-wrap { border-bottom: none; padding: 10px; }
+  .nav-menu { display: flex; padding: 0; }
+  .nav-item { padding: 10px; border-left: none; border-bottom: 3px solid transparent; white-space: nowrap; font-size: 0.8rem; }
+  .nav-item.active { border-left: none; border-bottom-color: var(--accent); }
+  .view-section { padding: 16px; }
+  .table-responsive { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<aside class="sidebar">
+  <div class="brand-wrap">
+    <div class="logo-mark">CB</div>
+    <div class="brand-text">COLOSSAL<span>ADMIN PORTAL</span></div>
+  </div>
+  <nav class="nav-menu">
+    <a class="nav-item active" onclick="switchTab('dashboard', this)">📊 Overview</a>
+    <a class="nav-item" onclick="switchTab('projects', this)">🏗️ Projects</a>
+    <a class="nav-item" onclick="switchTab('equipment', this)">🚜 Heavy Equipment</a>
+    <a class="nav-item" onclick="switchTab('staff', this)">👷 Staff & Engineers</a>
+    <a class="nav-item" onclick="switchTab('clients', this)">🤝 Clients & Contracts</a>
+  </nav>
+  <div style="padding: 20px;">
+    <a href="index.html" style="color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500;">&larr; Back to Website</a>
+  </div>
+</aside>
+
+<main class="main-content">
+  <header class="topbar">
+    <h1 id="page-title">Overview Dashboard</h1>
+    <div class="user-profile">
+      <div class="avatar">AG</div>
+      <span>Ahmad M. Garba (MD)</span>
+    </div>
+  </header>
+
+  <!-- 1. DASHBOARD VIEW -->
+  <div id="view-dashboard" class="view-section active">
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="kpi-title">Active Projects</div><div class="kpi-value">4</div><div class="kpi-trend">↑ 1 new contract</div></div>
+      <div class="kpi-card"><div class="kpi-title">Total Contract Value</div><div class="kpi-value">₦4.2B</div><div class="kpi-trend">Across all active sites</div></div>
+      <div class="kpi-card"><div class="kpi-title">Equipment Fleet Value</div><div class="kpi-value">₦850M</div><div class="kpi-trend">12 Heavy Machines</div></div>
+      <div class="kpi-card"><div class="kpi-title">Staff on Site Today</div><div class="kpi-value" style="color: var(--accent);">142</div></div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h2>Active Site Overview</h2></div>
+      <div class="table-responsive">
+        <table>
+          <thead><tr><th>Project Name</th><th>Location</th><th>Project Manager</th><th>Budget</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>River Crossing Bridge</strong></td><td>Benue State</td><td>Engr. Sarah O.</td><td>₦1,500,000,000</td><td><span class="badge blue">In Progress</span></td></tr>
+            <tr><td><strong>Federal Highway Phase 2</strong></td><td>Adamawa</td><td>Arc. David K.</td><td>₦2,100,000,000</td><td><span class="badge blue">In Progress</span></td></tr>
+            <tr><td><strong>Commercial Plaza</strong></td><td>Yola</td><td>Engr. Ibrahim M.</td><td>₦450,000,000</td><td><span class="badge orange">Foundation</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PROJECTS VIEW -->
+  <div id="view-projects" class="view-section">
+    <div class="table-card">
+      <div class="table-header">
+        <h2>All Infrastructure Projects</h2>
+        <button style="background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 4px; font-weight: 600; cursor: pointer;">+ New Project</button>
+      </div>
+      <div class="table-responsive">
+        <table>
+          <thead><tr><th>Project ID</th><th>Name</th><th>Client</th><th>Deadline</th><th>Completion %</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>#PRJ-001</td><td>River Crossing Bridge</td><td>Federal Govt</td><td>Dec 2026</td><td>65%</td><td><span class="badge blue">Active</span></td></tr>
+            <tr><td>#PRJ-002</td><td>Federal Highway P2</td><td>FMW</td><td>Mar 2027</td><td>40%</td><td><span class="badge blue">Active</span></td></tr>
+            <tr><td>#PRJ-003</td><td>Commercial Plaza</td><td>Private Dev</td><td>Aug 2026</td><td>15%</td><td><span class="badge orange">Starting</span></td></tr>
+            <tr><td>#PRJ-004</td><td>Site Reclamation</td><td>State Govt</td><td>Completed</td><td>100%</td><td><span class="badge green">Completed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. EQUIPMENT VIEW -->
+  <div id="view-equipment" class="view-section">
+    <div class="table-card">
+      <div class="table-header"><h2>Heavy Equipment & Fleet Tracking</h2></div>
+      <div class="table-responsive">
+        <table>
+          <thead><tr><th>Asset Name</th><th>Serial / ID</th><th>Assigned Site</th><th>Condition</th><th>Next Maintenance</th></tr></thead>
+          <tbody>
+            <tr><td><strong>CAT 320 Excavator</strong></td><td>#EQ-9902</td><td>River Crossing</td><td><span class="badge green">Operational</span></td><td>Nov 15, 2026</td></tr>
+            <tr><td><strong>CAT 140K Motor Grader</strong></td><td>#EQ-4412</td><td>Federal Highway</td><td><span class="badge green">Operational</span></td><td>Dec 02, 2026</td></tr>
+            <tr><td><strong>JCB 3CX Backhoe</strong></td><td>#EQ-1105</td><td>Commercial Plaza</td><td><span class="badge orange">In Repair</span></td><td>Currently in Workshop</td></tr>
+            <tr><td><strong>XCMG Truck Crane</strong></td><td>#EQ-7781</td><td>River Crossing</td><td><span class="badge green">Operational</span></td><td>Jan 10, 2027</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. STAFF VIEW -->
+  <div id="view-staff" class="view-section">
+    <div class="kpi-grid" style="margin-bottom: 20px;">
+      <div class="kpi-card"><div class="kpi-title">Total Workforce</div><div class="kpi-value">180</div></div>
+      <div class="kpi-card"><div class="kpi-title">Active On-Site</div><div class="kpi-value" style="color: var(--green);">142</div></div>
+      <div class="kpi-card"><div class="kpi-title">Engineers & Surveyors</div><div class="kpi-value">24</div></div>
+    </div>
+    <div class="table-card">
+      <div class="table-header"><h2>Site Staff Directory</h2></div>
+      <div class="table-responsive">
+        <table>
+          <thead><tr><th>Name</th><th>Role</th><th>Assigned Site</th><th>Status</th><th>Daily Rate</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Engr. Sarah O.</strong></td><td>Lead Civil Engineer</td><td>River Crossing</td><td><span class="badge green">On-Site</span></td><td>₦45,000</td></tr>
+            <tr><td><strong>Arc. David K.</strong></td><td>Project Director</td><td>Federal Highway</td><td><span class="badge green">On-Site</span></td><td>₦50,000</td></tr>
+            <tr><td><strong>Surv. Musa A.</strong></td><td>Land Surveyor</td><td>Commercial Plaza</td><td><span class="badge blue">Field Work</span></td><td>₦25,000</td></tr>
+            <tr><td><strong>Mr. Peter J.</strong></td><td>Crane Operator</td><td>River Crossing</td><td><span class="badge green">On-Site</span></td><td>₦15,000</td></tr>
+            <tr><td><strong>Mr. John B.</strong></td><td>Safety Officer</td><td>Federal Highway</td><td><span class="badge red">On Leave</span></td><td>₦18,000</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. CLIENTS VIEW -->
+  <div id="view-clients" class="view-section">
+    <div class="table-card">
+      <div class="table-header"><h2>Client & Contract Directory</h2></div>
+      <div class="table-responsive">
+        <table>
+          <thead><tr><th>Client Name</th><th>Contact Info</th><th>Active Projects</th><th>Total Contract Value</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Federal Ministry of Works</strong></td><td>Abuja, FCT<br><small style="color:var(--muted)">+234 900 000 0001</small></td><td>2</td><td>₦3,600,000,000</td><td><span class="badge blue">Government</span></td></tr>
+            <tr><td><strong>Adamawa State Govt</strong></td><td>Yola, Adamawa<br><small style="color:var(--muted)">+234 900 000 0002</small></td><td>1</td><td>₦450,000,000</td><td><span class="badge blue">Government</span></td></tr>
+            <tr><td><strong>Zenith Real Estate</strong></td><td>Lagos, Nigeria<br><small style="color:var(--muted)">+234 900 000 0003</small></td><td>1</td><td>₦250,000,000</td><td><span class="badge green">Private</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const titles = {
+    dashboard: 'Overview Dashboard',
+    projects: 'Project Management',
+    equipment: 'Fleet & Equipment Tracking',
+    staff: 'Staff & Engineer Management',
+    clients: 'Client & Contract Directory'
+  };
+
+  function switchTab(tabId, el) {
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.view-section').forEach(view => view.classList.remove('active'));
+    document.getElementById('view-' + tabId).classList.add('active');
+    document.getElementById('page-title').innerText = titles[tabId];
+  }
+</script>
+</body>
+</html>
