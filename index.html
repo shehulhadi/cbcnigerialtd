@@ -24,6 +24,36 @@ section{padding:64px 0}.section-head{display:flex;justify-content:space-between;
 
 
 
+
+<style>
+/* --- TYPOGRAPHY & CARD FIXES --- */
+/* Balanced text wrapping for headlines */
+h1, h2, h3, p { text-wrap: balance; word-break: normal; overflow-wrap: break-word; }
+
+/* Fix Section Headers */
+.section-head h2 { max-width: 100% !important; margin-bottom: 12px !important; }
+.section-head p { max-width: 500px; line-height: 1.6; }
+
+/* Fix Service Cards */
+.service { min-height: auto !important; display: flex; flex-direction: column; }
+.service p { flex-grow: 1; line-height: 1.5; }
+
+/* Fix Project Cards */
+.project-body { display: flex; flex-direction: column; height: 100%; }
+.project-body p { flex-grow: 1; line-height: 1.5; }
+
+/* Fix Team Cards (prevent text squishing) */
+.person { align-items: center; }
+.person h3 { line-height: 1.2; margin-bottom: 4px; }
+.person p { line-height: 1.4; }
+
+/* Fix Process Steps */
+.step p { line-height: 1.6; }
+
+/* Hero paragraph wrapping */
+.hero p { line-height: 1.6; text-wrap: pretty; }
+</style>
+
 </head>
 <body>
 <header class="topbar">
@@ -52,7 +82,7 @@ section{padding:64px 0}.section-head{display:flex;justify-content:space-between;
 </section>
 <div class="stats"><div class="wrap stats-grid"><div class="stat"><strong>10+</strong><span>Years of industry experience</span></div><div class="stat"><strong>50+</strong><span>Projects across key sectors</span></div><div class="stat"><strong>6</strong><span>Core service disciplines</span></div><div class="stat"><strong>100%</strong><span>Quality-led project delivery</span></div></div></div>
 <section class="services" id="services"><div class="wrap">
-  <div class="section-head"><div><div class="eyebrow">WHAT WE DO</div><h2>Engineering excellence.<br>Built into every detail.</h2></div><p>From feasibility and planning to construction and handover, our team brings practical expertise and disciplined project management to every brief.</p></div>
+  <div class="section-head"><div><div class="eyebrow">WHAT WE DO</div><h2>Engineering excellence. Built into every detail.</h2></div><p>From feasibility and planning to construction and handover, our team brings practical expertise and disciplined project management to every brief.</p></div>
   <div class="service-grid">
     <article class="service"><span class="number">01 / 06</span><div class="service-icon">⌁</div><h3>Bridge & Infrastructure</h3><p>Design and construction of pedestrian, highway and major infrastructure projects.</p></article>
     <article class="service"><span class="number">02 / 06</span><div class="service-icon">↗</div><h3>Road Construction</h3><p>Road development, drainage systems, asphalt paving and rehabilitation.</p></article>
@@ -63,15 +93,15 @@ section{padding:64px 0}.section-head{display:flex;justify-content:space-between;
   </div>
 </div></section>
 <section class="projects" id="projects"><div class="wrap">
-  <div class="section-head"><div><div class="eyebrow">SELECTED EXPERIENCE</div><h2>Projects that move<br>communities forward.</h2></div><p>A snapshot of the types of infrastructure and civil engineering work we undertake. Replace these concept visuals with verified project photography and case studies.</p></div>
+  <div class="section-head"><div><div class="eyebrow">SELECTED EXPERIENCE</div><h2>Projects that move communities forward.</h2></div><p>A snapshot of the types of infrastructure and civil engineering work we undertake. Replace these concept visuals with verified project photography and case studies.</p></div>
   <div class="project-grid">
     <article class="project"><div class="project-visual"><svg viewBox="0 0 500 300" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="road" x2="0" y2="1"><stop stop-color="#aab8c8"/><stop offset="1" stop-color="#34465b"/></linearGradient></defs><rect width="500" height="300" fill="#aebfd0"/><path d="M0 130L150 70L290 120L500 60V300H0Z" fill="#8298a9"/><path d="M130 300L220 90H290L410 300Z" fill="url(#road)"/><path d="M258 120L275 120L345 300H325Z" fill="#f8d76a"/><path d="M0 240L130 170L170 180L0 280Z" fill="#647e6e"/><path d="M410 180L500 120V300H450Z" fill="#6f8976"/><g stroke="#e7edf3" stroke-width="3"><path d="M240 180L225 210M260 230L245 260M282 280L275 300"/></g></svg><span class="project-label">Roads & transport</span></div><div class="project-body"><h3>Road Infrastructure</h3><p>Road development and rehabilitation with a focus on dependable access.</p><div class="project-meta"><span>TRANSPORT</span><span>VIEW PROJECT ↗</span></div></div></article>
     <article class="project"><div class="project-visual"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#b8c8d4"/><path d="M0 200L100 120L170 155L260 80L400 150V260H0Z" fill="#7e9aab"/><path d="M-20 190L130 110L210 140L420 45" stroke="#edf4fa" stroke-width="28"/><path d="M-20 190L130 110L210 140L420 45" stroke="#526a7c" stroke-width="19"/><path d="M-20 190L130 110L210 140L420 45" stroke="#f7d87c" stroke-width="2" stroke-dasharray="12 10"/><path d="M0 230H400" stroke="#607d69" stroke-width="35"/></svg><span class="project-label">Civil engineering</span></div><div class="project-body"><h3>Drainage & Site Works</h3><p>Site preparation and essential civil infrastructure.</p><div class="project-meta"><span>CIVIL WORKS</span><span>VIEW PROJECT ↗</span></div></div></article>
     <article class="project"><div class="project-visual"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#9aafbf"/><path d="M0 190L400 140V260H0Z" fill="#637b89"/><g fill="#d9e3eb" stroke="#738a9d" stroke-width="3"><rect x="50" y="70" width="85" height="120"/><rect x="155" y="35" width="105" height="155"/><rect x="280" y="85" width="75" height="105"/></g><g stroke="#8196a7" stroke-width="3"><path d="M70 95H115M70 120H115M70 145H115M180 65H235M180 95H235M180 125H235M300 110H340M300 140H340"/></g><path d="M0 190H400" stroke="#e5edf4" stroke-width="5"/></svg><span class="project-label">Building construction</span></div><div class="project-body"><h3>Commercial Buildings</h3><p>Purpose-built facilities designed for long-term use.</p><div class="project-meta"><span>BUILDING</span><span>VIEW PROJECT ↗</span></div></div></article>
   </div>
 </div></section>
-<section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="eyebrow">HOW WE WORK</div><h2>Clarity from first brief<br>to final handover.</h2></div><p>A transparent process helps clients understand scope, cost, timing and responsibility before work begins.</p></div><div class="process-grid"><div class="step"><span class="step-no">STEP 01</span><h3>Understand</h3><p>We review your goals, site conditions, constraints and required outcomes.</p></div><div class="step"><span class="step-no">STEP 02</span><h3>Plan & estimate</h3><p>We define scope, technical approach, preliminary costs and delivery milestones.</p></div><div class="step"><span class="step-no">STEP 03</span><h3>Execute</h3><p>Our team coordinates resources, quality checks, safety and project updates.</p></div><div class="step"><span class="step-no">STEP 04</span><h3>Handover</h3><p>We complete inspections, document deliverables and agree on next steps.</p></div></div></div></section>
-<section class="team" id="team"><div class="wrap"><div class="section-head"><div><div class="eyebrow">LEADERSHIP</div><h2>Experienced people.<br>Accountable delivery.</h2></div><p>Introduce the people responsible for technical quality, project oversight and client communication.</p></div><div class="team-grid"><article class="person"><div class="avatar">AG</div><div><h3>Ahmad Muhammad Garba</h3><p>Managing Director</p></div></article><article class="person"><div class="avatar">SO</div><div><h3>Engr. Sarah O.</h3><p>Head of Civil Engineering</p></div></article><article class="person"><div class="avatar">DK</div><div><h3>Arc. David K.</h3><p>Project Director</p></div></article></div></div></section>
+<section class="process" id="process"><div class="wrap"><div class="section-head"><div><div class="eyebrow">HOW WE WORK</div><h2>Clarity from first brief to final handover.</h2></div><p>A transparent process helps clients understand scope, cost, timing and responsibility before work begins.</p></div><div class="process-grid"><div class="step"><span class="step-no">STEP 01</span><h3>Understand</h3><p>We review your goals, site conditions, constraints and required outcomes.</p></div><div class="step"><span class="step-no">STEP 02</span><h3>Plan & estimate</h3><p>We define scope, technical approach, preliminary costs and delivery milestones.</p></div><div class="step"><span class="step-no">STEP 03</span><h3>Execute</h3><p>Our team coordinates resources, quality checks, safety and project updates.</p></div><div class="step"><span class="step-no">STEP 04</span><h3>Handover</h3><p>We complete inspections, document deliverables and agree on next steps.</p></div></div></div></section>
+<section class="team" id="team"><div class="wrap"><div class="section-head"><div><div class="eyebrow">LEADERSHIP</div><h2>Experienced people. Accountable delivery.</h2></div><p>Introduce the people responsible for technical quality, project oversight and client communication.</p></div><div class="team-grid"><article class="person"><div class="avatar">AG</div><div><h3>Ahmad Muhammad Garba</h3><p>Managing Director</p></div></article><article class="person"><div class="avatar">SO</div><div><h3>Engr. Sarah O.</h3><p>Head of Civil Engineering</p></div></article><article class="person"><div class="avatar">DK</div><div><h3>Arc. David K.</h3><p>Project Director</p></div></article></div></div></section>
 <section class="estimate" id="estimate"><div class="wrap estimate-wrap"><div class="estimate-copy"><div class="eyebrow">PROJECT ESTIMATOR</div><h2>Start with a clearer project budget.</h2><p>Share a few project details to generate an illustrative preliminary estimate. A formal quotation requires a site assessment, drawings and a confirmed bill of quantities.</p><div class="contact-list"><span>↗ &nbsp; Scope and requirements review</span><span>↗ &nbsp; Site-specific technical assessment</span><span>↗ &nbsp; Detailed quotation and work schedule</span></div></div>
 <form class="estimate-card" id="estimator"><h3>Estimate civil works</h3><p>Adjust the assumptions to explore an indicative budget.</p><div class="form-grid"><div class="field full"><label for="scope">Project scope</label><select id="scope"><option value="1">General civil works</option><option value="1.25">Road construction</option><option value="1.4">Drainage & infrastructure</option><option value="1.6">Commercial building</option><option value=".8">Earthworks & site preparation</option></select></div><div class="field"><label for="scale">Project scale</label><select id="scale"><option value="0.5">Small</option><option value="1" selected>Medium</option><option value="2.2">Large</option><option value="4">Major infrastructure</option></select></div><div class="field"><label for="terrain">Site terrain</label><select id="terrain"><option value="1">Normal / prepared</option><option value="1.15">Uneven terrain</option><option value="1.3">Difficult / remote</option></select></div><div class="field full"><label for="location">Project location</label><input id="location" placeholder="e.g. Jimeta, Adamawa State"></div></div><div class="estimate-result"><span>Illustrative preliminary estimate</span><strong id="estimateValue">₦225,000,000</strong><small>Planning figure only · Not a formal quotation</small></div><button class="btn btn-primary" type="button" id="requestQuote">REQUEST A FORMAL QUOTE ↗</button><p class="disclaimer">This sample estimator uses demonstration assumptions. Replace its calculation model with validated rates and a quantity-surveying workflow before publishing.</p></form></div></section>
 </main>
